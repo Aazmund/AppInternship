@@ -23,7 +23,7 @@ public class ConverterActivity extends AppCompatActivity {
     private TextView resultView;
     private int position = 0;
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint({"SetTextI18n", "DefaultLocale"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +63,7 @@ public class ConverterActivity extends AppCompatActivity {
 
             button.setOnClickListener(view -> {
                 float result = Float.parseFloat(valueView.getText().toString()) / Float.parseFloat(valueList.get(position));
-                resultView.setText(Float.toString(result));
+                resultView.setText(String.format("%.2f", result));
             });
 
         }else{
